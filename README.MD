@@ -2,9 +2,9 @@ React Material Layout
 --------------
 [Angular Material](https://material.angularjs.org) flex layout attributes without all the other stuff. Prefixed with `data-` for react.
 
-```npm install react-material-flex-layout```
+```npm install react-material-layout```
 
-```bower install react-material-flex-layout```
+```bower install react-material-layout```
 
 [Docs](https://material.angularjs.org/latest/layout/alignment)
 
