@@ -1,6 +1,6 @@
 {
   "name": "react-material-layout",
-  "version": "1.0.0",
+  "version": "1.1.0-rc4",
   "description": "Angular Material's \"layout\" attributes prefixed with data-",
   "main": "dist/react-material-layout.min.css",
   "scripts": {
@@ -16,6 +16,10 @@
     "flexbox"
   ],
   "author": "Bill Johnston (but mostly the angular material guys)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/billjohnston/react-material-layout"
+  },
   "license": "ISC",
   "devDependencies": {
     "async": "^2.0.0-rc.5",
