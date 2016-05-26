@@ -1,0 +1,28 @@
+{
+  "name": "react-material-layout",
+  "version": "1.0.0",
+  "description": "Angular Material's \"layout\" attributes prefixed with data-",
+  "main": "dist/react-material-layout.min.css",
+  "scripts": {
+    "build": "node ./build.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "angular",
+    "material",
+    "layout",
+    "flex",
+    "flexbox"
+  ],
+  "author": "Bill Johnston (but mostly the angular material guys)",
+  "license": "ISC",
+  "devDependencies": {
+    "async": "^2.0.0-rc.5",
+    "clean-css": "^3.4.13",
+    "lodash": "^4.13.1",
+    "node-sass": "^3.7.0",
+    "prompt": "^1.0.0",
+    "request": "^2.72.0"
+  }
+}
