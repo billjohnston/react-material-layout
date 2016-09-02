@@ -1,0 +1,25 @@
+{
+  "name": "react-material-layout",
+  "description": "Angular Material's \"layout\" attributes prefixed with data-",
+  "main": "dist/react-material-layout.min.css",
+  "authors": [
+    "Bill Johnston (but mostly the angular material guys)"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "react",
+    "angular",
+    "material",
+    "layout",
+    "flex",
+    "flexbox"
+  ],
+  "homepage": "https://github.com/billjohnston/react-material-layout",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
