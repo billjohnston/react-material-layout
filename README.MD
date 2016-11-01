@@ -12,4 +12,4 @@ Build
 --------------
 ```npm run build```
 
-You will be prompted for a release version (currently 1.1.0-rc4)
+You will be prompted for a release version (currently 1.1.1)
