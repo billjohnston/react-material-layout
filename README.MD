@@ -6,7 +6,50 @@ React Material Layout
 
 ```bower install react-material-layout```
 
-[Docs](https://material.angularjs.org/latest/layout/alignment)
+Example
+--------------
+	// You can either build css with webpack, or simply link in the HTML
+
+	// HTML link:
+	// <link rel="stylesheet" href="https://raw.githubusercontent.com/billjohnston/react-material-layout/master/dist/react-material-layout.min.css">
+
+	// Webpack:
+	// import 'react-material-layout/dist/react-material-layout.min.css'
+
+	class FlexboxTest extends React.Component{
+		render() {
+			return (
+				<div data-flex data-layout="column" data-layout-align="space-between">
+					<div data-flex data-layout="row" data-layout-align="space-between">
+						<div className="blue-box">1</div>
+						<div className="blue-box">2</div>
+						<div className="blue-box">3</div>
+					</div>
+					<div data-flex data-layout="row" data-layout-align="space-around center">
+						<div className="blue-box">1</div>
+						<div className="blue-box">2</div>
+						<div className="blue-box">3</div>
+					</div>
+					<div data-flex data-layout="row" data-layout-align="start center">
+						<div className="blue-box">1</div>
+						<div className="blue-box">2</div>
+						<div className="blue-box">3</div>
+					</div>
+					<div data-flex data-layout="row" data-layout-align="end center">
+						<div className="blue-box">1</div>
+						<div className="blue-box">2</div>
+						<div className="blue-box">3</div>
+					</div>
+				</div>
+			)
+		}
+	}
+
+	React.render(<FlexboxTest />, document.getElementById('container'))
+
+[Fiddle](http://jsfiddle.net/billjohnston4/zckxdmhz/)
+
+[Docs](https://material.angularjs.org/latest/layout/alignment) (remember to prefix all attributes with `data-`)
 
 Build
 --------------
