@@ -11,6 +11,7 @@ var src = [];
 
 prompt.start();
 prompt.get(['Material release'], function (err, release){
+	console.log('building...');
     async.forEachOfLimit({
         variables:  baseUrl + release['Material release'] + '/src/core/style/variables.scss',
         layoutStyle: baseUrl + release['Material release'] + '/src/core/style/layout.scss',
@@ -18,46 +19,54 @@ prompt.get(['Material release'], function (err, release){
         layoutService: baseUrl + release['Material release'] + '/src/core/services/layout/layout.scss',
     }, 1, function(url, key, eachCb){
         request(url, function(error, response, body){
-            if(!error && response.statusCode == 200){
-                if(key === 'layoutAttributes'){
-                    body = body.replace(/(\[)(.*?\])/g, '$1data-$2')
-                }
+            if (!error && response.statusCode == 200) {
+                if (key === 'layoutAttributes') {
+                    body = body.replace(
+						/(\[)(.*?\])/g,
+						'$1data-$2'
+					)
+                } else if (key === 'layoutStyle') {
+					body = body.replace(
+						/\.((:?layout|flex|offset|#{).*?)(?='|'|,|((\s|\t)+(\{|,|'|>)))/gm,
+						'[data-$1]'
+					)
+				} else if (key === 'layoutService') {
+					body = body.replace(
+						/\.((:?layout|hide|show).*?)(?=,|:|\)|((\s|\t)+\{))/gm,
+						'[data-$1]'
+					)
+				}
                 src.push(body);
                 eachCb();
-            }
-            else{
+            } else {
                 eachCb(error, response.statusCode);
             }
         })
     }, function(err){
-        if(err){
+        if (err) {
             console.log('Error:', err)
-        }
-        else{
+        } else {
             sass.render({data: src.join('\n')}, function(err, result){
-                if(!err){
+                if (!err) {
                     async.parallel([
                         function(parallelCb){
                             fs.writeFile('./dist/react-material-layout.css', result.css, function(err){
-                                if(err){
+                                if (err) {
                                     parallelCb(err);
-                                }
-                                else{
+                                } else {
                                     parallelCb();
                                 }
                             });
                         },
                         function(parallelCb){
                             new cleanCss().minify(result.css, function (error, minified) {
-                                if(error){
+                                if (error) {
                                     parallelCb(err);
-                                }
-                                else{
+                                } else {
                                     fs.writeFile('./dist/react-material-layout.min.css', minified.styles, function(err){
-                                        if(err){
+                                        if (err) {
                                             parallelCb(err);
-                                        }
-                                        else{
+                                        } else {
                                             parallelCb();
                                         }
                                     });
@@ -65,15 +74,13 @@ prompt.get(['Material release'], function (err, release){
                             });
                         }
                     ], function(err){
-                        if(err){
+                        if (err) {
                             console.log('Error:', err);
-                        }
-                        else{
+                        } else {
                             console.log('done');
                         }
                     })
-                }
-                else{
+                } else {
                     console.log('Error:', err.message)
                 }
             });
