@@ -4,7 +4,7 @@
   "description": "Angular Material's \"layout\" attributes prefixed with data-",
   "main": "dist/react-material-layout.min.css",
   "scripts": {
-    "build": "node ./build.js",
+    "build": "node ./src/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
