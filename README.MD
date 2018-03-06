@@ -96,4 +96,4 @@ Build
 --------------
 ```npm run build```
 
-You will be prompted for a release version (currently 1.1.1)
+You will be prompted for a release version (currently 1.1.7)
