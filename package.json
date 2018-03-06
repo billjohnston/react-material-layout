@@ -1,6 +1,6 @@
 {
   "name": "react-material-layout",
-  "version": "1.1.7",
+  "version": "1.1.2",
   "description": "Angular Material's \"layout\" attributes prefixed with data-",
   "main": "dist/react-material-layout.min.css",
   "scripts": {
