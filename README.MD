@@ -6,7 +6,7 @@ React Material Layout
 
 ```bower install react-material-layout```
 
-Example
+Data Attribute Example
 --------------
 	// You can either build css with webpack, or simply link in the HTML
 
@@ -91,6 +91,7 @@ Class based Example
 	React.render(<FlexboxTest />, document.getElementById('container'))
 
 [Fiddle](https://jsfiddle.net/billjohnston4/1wtgh25o/)
+
 [Docs](https://material.angularjs.org/latest/layout/alignment) (use classes instead of attributes)
 
 Build
